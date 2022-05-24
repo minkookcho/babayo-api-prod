@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: babayo-api
+  name: babayo-api
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: babayo-api
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: babayo-api
+    spec:
+      containers:
+      - image: babayo/babayo-api:latest
+        name: babayo-api
