@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: babayo-api
+  name: babayo-api
+spec:
+  ports:
+  - port: 81
+    protocol: TCP
+    targetPort: 10107
+  selector:
+    app: babayo-api
