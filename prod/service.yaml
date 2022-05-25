@@ -5,7 +5,7 @@ metadata:
   labels:
     app: babayo-api
   name: babayo-api
-    annotations:
+  annotations:
     service.beta.kubernetes.io/do-loadbalancer-protocol: https
     service.beta.kubernetes.io/do-loadbalancer-tls-ports: "443"
     service.beta.kubernetes.io/do-loadbalancer-algorithm: least_connections
