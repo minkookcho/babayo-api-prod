@@ -6,11 +6,13 @@ metadata:
     app: babayo-api
   name: babayo-api
   annotations:
-    service.beta.kubernetes.io/do-loadbalancer-protocol: https
-    service.beta.kubernetes.io/do-loadbalancer-tls-ports: "443"
-    service.beta.kubernetes.io/do-loadbalancer-algorithm: least_connections
-    service.beta.kubernetes.io/do-loadbalancer-certificate-id: 	fd71aca8-3af2-4a1e-83ce-76ed9f2f87ae
-    service.beta.kubernetes.io/do-loadbalancer-healthcheck-protocol: tcp
+      # Note that the backend talks over HTTP.
+    service.beta.kubernetes.io/aws-load-balancer-backend-protocol: http
+    # TODO: Fill in with the ARN of your certificate.
+    service.beta.kubernetes.io/aws-load-balancer-ssl-cert: arn:aws:acm:ap-northeast-2:483132274140:certificate/fd71aca8-3af2-4a1e-83ce-76ed9f2f87ae
+    # Only run SSL on the port named "https" below.
+    service.beta.kubernetes.io/aws-load-balancer-ssl-ports: "https"
+    
 spec:
   ports:
   - port: 443
