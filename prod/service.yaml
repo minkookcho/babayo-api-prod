@@ -5,12 +5,21 @@ metadata:
   labels:
     app: babayo-api
   name: babayo-api
+    annotations:
+    service.beta.kubernetes.io/do-loadbalancer-protocol: https
+    service.beta.kubernetes.io/do-loadbalancer-tls-ports: "443"
+    service.beta.kubernetes.io/do-loadbalancer-algorithm: least_connections
+    service.beta.kubernetes.io/do-loadbalancer-certificate-id: 	fd71aca8-3af2-4a1e-83ce-76ed9f2f87ae
+    service.beta.kubernetes.io/do-loadbalancer-healthcheck-protocol: tcp
 spec:
   ports:
-
+  - port: 443
+    name: https
+    protocol: TCP
+    targetPort: 10107
   - port: 80
     name: http
     protocol: TCP
-    targetPort: 10107
+    targetPort: 443
   selector:
     app: babayo-api
