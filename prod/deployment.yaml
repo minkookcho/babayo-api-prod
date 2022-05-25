@@ -18,5 +18,5 @@ spec:
         app: babayo-api
     spec:
       containers:
-      - image: babayo/babayo-api:42
+      - image: babayo/babayo-api:44
         name: babayo-api
