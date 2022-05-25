@@ -10,7 +10,8 @@ metadata:
     service.beta.kubernetes.io/aws-load-balancer-backend-protocol: http
     # TODO: Fill in with the ARN of your certificate.
     service.beta.kubernetes.io/aws-load-balancer-ssl-cert: arn:aws:acm:ap-northeast-2:483132274140:certificate/eb1e0ba1-4f9e-4a32-84e0-f69858eca6a0
-
+    # Only run SSL on the port named "https" below.
+    service.beta.kubernetes.io/aws-load-balancer-ssl-ports: "https"
     
 spec:
   ports:
