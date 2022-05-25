@@ -22,6 +22,6 @@ spec:
   - port: 80
     name: http
     protocol: TCP
-    targetPort: http
+    targetPort: 10107
   selector:
     app: babayo-api
